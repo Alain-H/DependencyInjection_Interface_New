@@ -39,7 +39,7 @@ namespace dipendency_Injection_mit_Interface_New
 
             foreach (var x in liste)
             {
-                Console.WriteLine($" {counter++}tes Tier {x.ToString}");
+                Console.WriteLine($"{counter++}tes Tier: {x.ToString()}");
             }
         }
         public void tierEntfernen()
@@ -47,11 +47,13 @@ namespace dipendency_Injection_mit_Interface_New
             Console.WriteLine("Geben Sie bitte den Namen des Tieres ein, welches sie löschen möchten");
             Console.Write("Eingabe: ");
             string TierName = Console.ReadLine();
-            for(int i = 0; i < liste.Count -1; i++)
+            for(int i = 0; i < liste.Count; i++)
             {
                 if(TierName.Equals(liste[i].Name))
                 {
                     liste.RemoveAt(i);
+                    Console.WriteLine("Das Tier ist eintfernt worden.");
+                    Console.ReadKey();
                     break;
                 }
                 else if(i==liste.Count-1)

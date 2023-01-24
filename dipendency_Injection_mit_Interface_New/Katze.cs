@@ -14,7 +14,6 @@ namespace dipendency_Injection_mit_Interface_New
         public Katze()
         {
             SetName();
-
         }
 
         public void SetName()
@@ -25,7 +24,7 @@ namespace dipendency_Injection_mit_Interface_New
 
         public override string ToString()
         {
-            return $"\n Katze [Name: " + Name + "]";
+            return $"Katze [Name :" + Name + "]";
         }
     }
 }

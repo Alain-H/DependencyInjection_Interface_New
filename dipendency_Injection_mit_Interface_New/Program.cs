@@ -6,18 +6,17 @@ while(true)
 {
     try
     {
-        Console.WriteLine("Möchten sie das programm beenden? Mit J/j weiter mit N/n beenden.");
+        Console.WriteLine("Möchten sie weiter? Mit J/j weiter mit N/n beenden.");
         Console.Write("Eingabe: ");
         string str = Console.ReadLine();
-        if(str == "N" || str == "n")
+        if (str == "N" || str == "n")
         {
             Console.WriteLine("Das programm wurde beendet!");
             break;
         }
-        else if(str == "J" || str == "j")
+        else if (str == "J" || str == "j")
         {
             int wahl = 0;
-
             Menu(ref wahl);
             switch(wahl)
             {
@@ -34,22 +33,46 @@ while(true)
         }
         else
         {
-            Console.WriteLine("J/j oder N/n geben Sie bitte den Richtign Buchstaben ein !");
+            Console.WriteLine("Geben Sie bitte den Richtigen Buchstaben ein !");
         }
     }
     catch (Exception ex)
     { Console.WriteLine(ex.ToString()); }
     
 }
-Console.ReadKey();  
+Console.Clear();
+
+pfleger.getTiere();
+
+Console.WriteLine("Möchten Sie ein Tier entfernen mit J/j bestätigen mit N/n Abbruch");
+Console.Write("Eingabe: ");
+string JN = Console.ReadLine();
+
+if(JN == "N"|| JN == "n")
+{
+    Console.WriteLine("\nOK Selber Schuld!");
+}
+else if (JN == "J" || JN == "j")
+{
+    pfleger.tierEntfernen();
+}
+else
+{
+    Console.WriteLine("Falsche Eingabe!");
+}
+
+pfleger.getTiere();
+
+Console.ReadKey();
+
 static void Menu(ref int x)
 {
     try
     {
-        Console.WriteLine("\n_______Wählen Sie ein Tier:_______");
-        Console.WriteLine("Hund_____________(1)");
-        Console.WriteLine("Katze____________(2)");
-        Console.WriteLine("Eingabe          : ");
+        Console.WriteLine("Wählen Sie ein Tier:");
+        Console.WriteLine("Hund             (1)");
+        Console.WriteLine("Katze            (2)");
+        Console.Write("Eingabe              : ");
         x = Convert.ToInt32(Console.ReadLine());
     }
     catch (Exception ex)

@@ -15,12 +15,12 @@ namespace dipendency_Injection_mit_Interface_New
         }
         public void setName()
         {
-            Console.Write("\nBitte geben Sie den Namen Ihres hundes ein: ");
+            Console.Write("\nBitte geben Sie den Namen Ihres Hundes ein: ");
             Name = Console.ReadLine();
         }
         public override string ToString()
         {
-            return $"\n Hund [Name: " + Name + "]";
+            return $"Hund [Name: " + Name + "]";
         }
 
 
